@@ -33,7 +33,7 @@ namespace MarketingCenter
             var n = users.Where(a => a.Login == txt_login.Text && a.Password == pb_password.Password).FirstOrDefault();
             if(n != null)
             {
-
+                NavigationService.Navigate(new AdminPage());
                 //ggg
             }
             else
@@ -44,7 +44,8 @@ namespace MarketingCenter
 
         private void btn_reg_Click(object sender, RoutedEventArgs e)
         {
-
+            Registration reg = new Registration();
+            NavigationService.Navigate(reg);
         }
     }
 }

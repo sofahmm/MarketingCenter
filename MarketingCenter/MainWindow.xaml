@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <StackPanel>
-            <Frame x:Name="fr_start"/>
+            <Frame x:Name="fr_start" NavigationUIVisibility="Visible"/>
         </StackPanel>
     </Grid>
 </Window>
