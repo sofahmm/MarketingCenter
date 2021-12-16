@@ -21,6 +21,7 @@ namespace MarketingCenter
     /// </summary>
     public partial class AddBuyer : Page
     {
+        public  static MarketingEntities db = new MarketingEntities();
         public static ObservableCollection<Buyer> buyers { get; set; }
         public static ObservableCollection<Bank_details> bank_Details { get; set; }
         public AddBuyer()
@@ -28,8 +29,9 @@ namespace MarketingCenter
             InitializeComponent();
             buyers = new ObservableCollection<Buyer>(DBConnect.connection.Buyer.ToList());
             bank_Details = new ObservableCollection<Bank_details>(DBConnect.connection.Bank_details.ToList());
-            cb_numbBank.ItemsSource = DBConnect.connection.Buyer.ToList();
-            cb_numbBank.DisplayMemberPath = "Bank_details";
+            // cb_numbBank.ItemsSource = new ObservableCollection<Buyer>(DBConnect.connection.Buyer.ToList());
+            cb_numbBank.ItemsSource = db.Bank_details.ToList();
+            
 
             //cb_numbBank.DisplayMemberPath = "Bank_number";
             this.DataContext = this;
@@ -38,14 +40,24 @@ namespace MarketingCenter
         private void btn_ok_Click(object sender, RoutedEventArgs e)
         {
             var b = new Buyer();
-            b.Entity = txt_entity.Text;
+            //var w = cb_entity.SelectedItem as Buyer;
+            b.Entity = (cb_entity.SelectedItem).ToString();
+            //b.Entity = txt_entity.Text;
             b.Name = txt_name.Text;
             b.Document_number = Convert.ToInt32(txt_numberDoc.Text);
             b.Document_series = Convert.ToInt32(txt_serDoc.Text);
-
+            var gg = cb_numbBank.SelectedItem as Bank_details;
+            b.Bank_details =  gg;
+            db.Buyer.Add(b);
+            db.SaveChanges();
         }
 
         private void cb_numbBank_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cb_entity_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

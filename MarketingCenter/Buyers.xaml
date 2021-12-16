@@ -17,8 +17,8 @@
                         <GridViewColumn Header="Название" Width="100" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
                         <GridViewColumn Header="Номер документа" Width="150" DisplayMemberBinding="{Binding Document_number}"></GridViewColumn>
                         <GridViewColumn Header="Серия документа" Width="150" DisplayMemberBinding="{Binding Document_series}"></GridViewColumn>
-                        <GridViewColumn Header="Номер банка" Width="150" DisplayMemberBinding="{Binding Bank_details}"></GridViewColumn>
-                        <GridViewColumn Header="Название банка" Width="150" DisplayMemberBinding="{Binding Bank_details1.Bank_name}"></GridViewColumn>
+                        <GridViewColumn Header="Номер банка" Width="150" DisplayMemberBinding="{Binding Bank_details_number}"></GridViewColumn>
+                        <GridViewColumn Header="Название банка" Width="150" DisplayMemberBinding="{Binding Bank_details.Bank_name}"></GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

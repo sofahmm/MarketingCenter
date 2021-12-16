@@ -25,9 +25,9 @@ namespace MarketingCenter
         public string Name { get; set; }
         public Nullable<int> Document_number { get; set; }
         public Nullable<int> Document_series { get; set; }
-        public Nullable<int> Bank_details { get; set; }
+        public Nullable<int> Bank_details_number { get; set; }
     
-        public virtual Bank_details Bank_details1 { get; set; }
+        public virtual Bank_details Bank_details { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoice { get; set; }
     }

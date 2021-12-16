@@ -21,7 +21,7 @@
           <Property Name="Name" Type="varchar(max)" />
           <Property Name="Document_number" Type="int" />
           <Property Name="Document_series" Type="int" />
-          <Property Name="Bank_details" Type="int" />
+          <Property Name="Bank_details_number" Type="int" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -76,7 +76,7 @@
               <PropertyRef Name="Bank_number" />
             </Principal>
             <Dependent Role="Buyer">
-              <PropertyRef Name="Bank_details" />
+              <PropertyRef Name="Bank_details_number" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -163,8 +163,8 @@
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Document_number" Type="Int32" />
           <Property Name="Document_series" Type="Int32" />
-          <Property Name="Bank_details" Type="Int32" />
-          <NavigationProperty Name="Bank_details1" Relationship="Self.FK_Buyer_Bank_details" FromRole="Buyer" ToRole="Bank_details" />
+          <Property Name="Bank_details_number" Type="Int32" />
+          <NavigationProperty Name="Bank_details" Relationship="Self.FK_Buyer_Bank_details" FromRole="Buyer" ToRole="Bank_details" />
           <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Buyer" FromRole="Buyer" ToRole="Invoice" />
         </EntityType>
         <EntityType Name="Invoice">
@@ -225,7 +225,7 @@
               <PropertyRef Name="Bank_number" />
             </Principal>
             <Dependent Role="Buyer">
-              <PropertyRef Name="Bank_details" />
+              <PropertyRef Name="Bank_details_number" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -312,7 +312,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Document_number" ColumnName="Document_number" />
                 <ScalarProperty Name="Document_series" ColumnName="Document_series" />
-                <ScalarProperty Name="Bank_details" ColumnName="Bank_details" />
+                <ScalarProperty Name="Bank_details_number" ColumnName="Bank_details_number" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
