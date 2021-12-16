@@ -73,6 +73,9 @@
     <Compile Include="Authorisation.xaml.cs">
       <DependentUpon>Authorisation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BankDetAdd.xaml.cs">
+      <DependentUpon>BankDetAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BankDetailsPage.xaml.cs">
       <DependentUpon>BankDetailsPage.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Authorisation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BankDetAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

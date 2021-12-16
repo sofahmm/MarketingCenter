@@ -18,6 +18,9 @@
                         </GridView>
                 </ListView.View>
             </ListView>
+            <Button x:Name="btn_add" Content="Добавить" 
+                    Height="36" Width="150" Margin="10" 
+                    Click="btn_add_Click"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -33,5 +33,10 @@ namespace MarketingCenter
         {
             list_bankDet.ItemsSource = DBConnect.connection.Bank_details.ToList();
         }
+
+        private void btn_add_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new BankDetAdd());
+        }
     }
 }

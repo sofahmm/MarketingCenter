@@ -17,26 +17,27 @@ using System.Collections.ObjectModel;
 namespace MarketingCenter
 {
     /// <summary>
-    /// Interaction logic for Products.xaml
+    /// Interaction logic for BankDetAdd.xaml
     /// </summary>
-    public partial class Products : Page
+    public partial class BankDetAdd : Page
     {
-        public static ObservableCollection<Product> products { get; set; }
-        public Products()
+        public static MarketingEntities db = new MarketingEntities();
+        public static ObservableCollection<Bank_details> bank_s { get; set; }
+        public BankDetAdd()
         {
+            
+            bank_s = new ObservableCollection<Bank_details>(DBConnect.connection.Bank_details.ToList());
             InitializeComponent();
-            products = new ObservableCollection<Product>(DBConnect.connection.Product.ToList());
             this.DataContext = this;
-        }
-
-        private void list_products_Loaded(object sender, RoutedEventArgs e)
-        {
-            list_products.ItemsSource = DBConnect.connection.Product.ToList();
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new ProductAdd());
+            var t = new Bank_details();
+            t.Bank_number = Convert.ToInt32(txt_NumbBank.Text);
+            t.Bank_name = txt_nameBank.Text;
+            db.Bank_details.Add(t);
+            db.SaveChanges();
         }
     }
 }

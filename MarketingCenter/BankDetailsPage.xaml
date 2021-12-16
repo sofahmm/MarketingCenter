@@ -13,11 +13,15 @@
             <ListView x:Name="list_bankDet" Height="300" Loaded="list_bankDet_Loaded">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Номер банка" Width="100" DisplayMemberBinding="{Binding Bank_number}"></GridViewColumn>
-                        <GridViewColumn Header="Имя банка" Width="100" DisplayMemberBinding="{Binding Bank_name}"></GridViewColumn>
+                        <GridViewColumn Header="Номер банка" Width="100" 
+                                        DisplayMemberBinding="{Binding Bank_number}"></GridViewColumn>
+                        <GridViewColumn Header="Имя банка" Width="100"
+                                        DisplayMemberBinding="{Binding Bank_name}"></GridViewColumn>
                         </GridView>
                 </ListView.View>
             </ListView>
+            <Button x:Name="btn_add" Content="Записать"
+                    Click="btn_add_Click" Width="150" Height="36" Margin="10"/>
         </StackPanel>
     </Grid>
 </Page>
