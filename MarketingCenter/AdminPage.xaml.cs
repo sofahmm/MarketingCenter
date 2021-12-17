@@ -32,7 +32,7 @@ namespace MarketingCenter
 
         private void btn_invoice_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new PageInvoice());
         }
 
         private void btn_priduct_Click(object sender, RoutedEventArgs e)
